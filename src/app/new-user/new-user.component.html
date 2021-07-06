@@ -1,0 +1,49 @@
+<div class="container mt-3">
+  <div class="card mx-auto">
+    <h5 class="card-header text-center">Crear Nuevo Usuario</h5>
+    <div class="card-body">
+      <div class="row mx-auto">
+        <div class="col">
+          <div class="form-group row">
+            <label for="name" class="control-label mt-1">Nombre</label>
+            <div class="col">
+              <input type="text" class="form-control" [(ngModel)]="name">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-auto">
+        <div class="col">
+          <div class="form-group row">
+            <label for="name" class="control-label mt-1">Usuario</label>
+            <div class="col">
+              <input type="email" class="form-control" [(ngModel)]="email">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-auto">
+        <div class="col">
+          <div class="form-group row">
+            <label for="name" class="control-label mt-1">Password</label>
+            <div class="col">
+              <input type="password" class="form-control" [(ngModel)]="password">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-auto">
+        <div class="col">
+          <div class="form-group row">
+            <img [src]=PhotoFilePath height="250px;" width="200px;">
+            <input type="file" (change)="uploadPhoto($event)" class="ml-2"/>
+          </div>
+        </div>
+      </div>
+
+        <button (click)="addUser()" class="btn btn-primary float-right">
+          Crear Usuario
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Output, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { SharedService } from './shared.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MovieClient';
+
+  // name = sessionStorage.getItem("name");
+  // userId = sessionStorage.getItem("userId");
+  // photo = this.service.PhotoUrl+sessionStorage.getItem("photo");
+
+  constructor() {
+  }
+
 }
