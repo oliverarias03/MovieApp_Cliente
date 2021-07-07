@@ -111,7 +111,19 @@ export class SharedService {
   }
 
   deleteMovie(value: any){
-    return this.http.delete(this.APIUrl+'LikedMovies/Eliminar',value);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      reportProgress: true
+    };
+
+    return this.http.post(this.APIUrl+'LikedMovies/Eliminar', JSON.stringify(value), httpOptions).pipe(
+      map((res: any[] | any) => {
+        return res;
+      })
+    );
+
   }
 
   UploadPhoto(value: any){
