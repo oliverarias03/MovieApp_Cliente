@@ -1,3 +1,16 @@
+html,body{
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: 'Numans', sans-serif;
+}
+
+.container{
+  height: 100%;
+  align-content: center;
+}
+
 .card{
   width: 50%;
+  background-color: rgb(255, 255, 255) !important;
 }

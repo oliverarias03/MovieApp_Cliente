@@ -11,10 +11,6 @@ import { SharedService } from './shared.service';
 export class AppComponent {
   title = 'MovieClient';
 
-  // name = sessionStorage.getItem("name");
-  // userId = sessionStorage.getItem("userId");
-  // photo = this.service.PhotoUrl+sessionStorage.getItem("photo");
-
   constructor() {
   }
 

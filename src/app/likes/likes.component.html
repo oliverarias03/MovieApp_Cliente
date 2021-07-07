@@ -1,1 +1,45 @@
-<p>likes works!</p>
+<div [ngStyle]="{backgroundImage:'url(../.././assets/bg4.png)'}" style="background-repeat: repeat;">
+  <app-navbar></app-navbar>
+  <div class="container">
+    <div class="row text-center" *ngIf="loading">
+      <div class="col">
+        <div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+        <!--CARDS-->
+        <div class="row justify-content-center">
+          <div class="col-3 m-3" *ngFor="let item of resultList">
+            <div class="card" style="width: 19rem; height: auto">
+              <img src="{{item.poster_path}}" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title" *ngIf="!item.isMovie">{{item.original_name}}</h5>
+                <h5 class="card-title" *ngIf="item.isMovie">{{item.original_title}}</h5>
+                <p class="card-text text-muted" *ngIf="!item.isMovie">{{item.first_air_date |date}}</p>
+                <p class="card-text text-muted" *ngIf="item.isMovie">{{item.release_date |date}}</p>
+                <p class="card-text" *ngIf="!item.isMovie">Tipo: Serie TV</p>
+                <p class="card-text" *ngIf="item.isMovie">Tipo: Pelicula</p>
+                <p class="card-text">Puntuacion: {{item.vote_average}}</p>
+                <hr>
+                <div class="row text-center mb-2" *ngIf="saving">
+                  <div class="col">
+                    <div class="spinner-border text-dark" role="status">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col text-center">
+                    <!-- <button class="btn btn-outline-info mr-2" data-toggle="modal" data-target="#infoModal"(click)="sendPlot(item.overview)"><i class="fas fa-info-circle fa-2x"></i></button>
+                    <button class="btn btn-outline-secondary mr-2" (click)="sendId(item)"><i class="fas fa-download fa-2x"></i></button>
+                    <button class="btn btn-outline-danger mr-2" *ngIf="item.hasTrailer" data-toggle="modal" data-target="#trailerModal"><i class="far fa-play-circle fa-2x"></i></button>
+                    <button class="btn btn-outline-primary" (click)="saveLike(item)"><i class="fas fa-thumbs-up fa-2x"></i></button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>

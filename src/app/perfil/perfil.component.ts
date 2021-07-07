@@ -97,10 +97,4 @@ export class PerfilComponent implements OnInit {
     }
 
   }
-
-  logout(){
-    sessionStorage.clear();
-    this.loggedIn = false;
-    this.router.navigate(['/login']);
-  }
 }
